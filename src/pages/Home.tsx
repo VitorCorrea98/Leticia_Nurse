@@ -1,119 +1,79 @@
 // src/pages/Home.tsx
 import type React from "react";
-import { Link } from "react-router-dom";
+import { useId } from "react";
+import Foto_Hero from "../assets/Home/Foto_Hero_Le_Vitoria.jpeg";
 
 const Home: React.FC = () => {
 	return (
 		<div className="min-h-screen">
-			{/* Hero Section */}
-			<section className="bg-gradient-to-r from-blue-50 to-indigo-50 py-20">
-				<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-					<div className="text-center">
-						<h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-							Compassionate Care
-							<span className="text-blue-600 block">When You Need It Most</span>
-						</h1>
-						<p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-							Registered Nurse dedicated to providing exceptional healthcare
-							services with empathy, expertise, and personalized attention for
-							every patient.
-						</p>
-						<div className="flex flex-col sm:flex-row gap-4 justify-center">
-							<Link
-								to="/services"
-								className="bg-blue-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-blue-700 transition-colors duration-200"
-							>
-								View My Services
-							</Link>
-							<Link
-								to="/about"
-								className="border-2 border-blue-600 text-blue-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-blue-600 hover:text-white transition-colors duration-200"
-							>
-								Learn About Me
-							</Link>
+			<section id={useId()} className="relative flex justify-center w-full">
+				<img
+					className="size-max w-full"
+					src={Foto_Hero}
+					alt="Foto da Leticia e da Vitoria"
+				/>
+				<span className="absolute bottom-16 left-1/2 -translate-x-1/2 font-scandilover text-center text-white w-full text-7xl p-4">
+					parto, conexão e ciência
+				</span>
+			</section>
+			<section id={useId()} className="flex flex-col py-12">
+				<h2 className="text-primary-dark text-center font-dm_serif text-7xl mb-28">
+					Cenário obstétrico
+				</h2>
+				<div className="flex justify-around">
+					<div className="bg-secondary-pink p-8 rounded-full">
+						<div className="flex flex-col items-center -mb-24">
+							<span className="text-7xl font-extrabold text-white mb-6">
+								67%
+							</span>
+							<p className="w-52 text-2xl text-center font-open_sans text-primary-dark font-bold">
+								das mulheres sofrem algum tipo de violência no parto
+							</p>
+						</div>
+					</div>
+					<div className="bg-secondary-pink p-8 rounded-full">
+						<div className="flex flex-col items-center">
+							<span className="text-7xl font-extrabold text-white mb-6">
+								84%
+							</span>
+							<p className="w-52 text-pretty text-2xl text-center font-open_sans text-primary-dark font-bold">
+								lugar que o brasil ocupa no ranking mundial de cesarianas
+							</p>
+						</div>
+					</div>
+					<div className="bg-secondary-pink p-8 rounded-full">
+						<div className="flex flex-col items-center">
+							<span className="text-7xl font-extrabold text-white mb-6">
+								84%
+							</span>
+							<p className="w-52 text-2xl text-center font-open_sans text-primary-dark font-bold">
+								desistem do parto normal
+							</p>
 						</div>
 					</div>
 				</div>
 			</section>
-
-			{/* Quick Stats */}
-			<section className="py-16 bg-white">
-				<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-					<div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-						<div>
-							<div className="text-3xl md:text-4xl font-bold text-blue-600 mb-2">
-								5+
-							</div>
-							<div className="text-gray-600">Years Experience</div>
-						</div>
-						<div>
-							<div className="text-3xl md:text-4xl font-bold text-blue-600 mb-2">
-								1000+
-							</div>
-							<div className="text-gray-600">Patients Served</div>
-						</div>
-						<div>
-							<div className="text-3xl md:text-4xl font-bold text-blue-600 mb-2">
-								24/7
-							</div>
-							<div className="text-gray-600">Availability</div>
-						</div>
-						<div>
-							<div className="text-3xl md:text-4xl font-bold text-blue-600 mb-2">
-								99%
-							</div>
-							<div className="text-gray-600">Satisfaction Rate</div>
-						</div>
-					</div>
-				</div>
-			</section>
-
-			{/* Features */}
-			<section className="py-16 bg-gray-50">
-				<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-					<div className="text-center mb-12">
-						<h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-							Why Choose My Services?
-						</h2>
-						<p className="text-xl text-gray-600 max-w-2xl mx-auto">
-							Professional healthcare services tailored to your unique needs and
-							circumstances.
-						</p>
-					</div>
-					<div className="grid md:grid-cols-3 gap-8">
-						<div className="bg-white p-8 rounded-xl shadow-lg text-center">
-							<div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-								<span className="text-2xl">👩‍⚕️</span>
-							</div>
-							<h3 className="text-xl font-semibold mb-4">Expert Care</h3>
-							<p className="text-gray-600">
-								Licensed RN with extensive experience in patient care,
-								medication management, and health education.
-							</p>
-						</div>
-						<div className="bg-white p-8 rounded-xl shadow-lg text-center">
-							<div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-								<span className="text-2xl">❤️</span>
-							</div>
-							<h3 className="text-xl font-semibold mb-4">
-								Compassionate Approach
-							</h3>
-							<p className="text-gray-600">
-								Treating every patient with dignity, respect, and genuine care
-								for their well-being.
-							</p>
-						</div>
-						<div className="bg-white p-8 rounded-xl shadow-lg text-center">
-							<div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-								<span className="text-2xl">🏠</span>
-							</div>
-							<h3 className="text-xl font-semibold mb-4">Home Visits</h3>
-							<p className="text-gray-600">
-								Convenient in-home nursing services that prioritize your comfort
-								and convenience.
-							</p>
-						</div>
-					</div>
+			<section className="bg-secondary-purple py-12">
+				<h2 className="text-7xl text-center text-primary-dark ">
+					Nossa missão
+				</h2>
+				<div className="p-12 text-white text-4xl flex flex-col justify-center w-3/4 mx-auto gap-12 text-pretty">
+					<p className="font-open_sans text-pretty">
+						Nos unimos porque, na prática, sabemos o quanto o sistema obstétrico
+						ainda <span className="font-bold">dificulta o parto normal</span>,
+						especialmente no contexto do plantão. São muitas mulheres vivendo
+						experiências marcadas pelo{" "}
+						<span className="font-bold">medo e pela insegurança</span>, que
+						começam na gestação e se estendem até o parto. É difícil se sentir
+						em paz quando não se sabe o que esperar.
+					</p>
+					<p className="font-open_sans">
+						Nossa missão é acompanhar você desde a gestação até o parto, unindo
+						o olhar técnico da enfermeira obstetra ao acolhimento da doula.
+						Queremos que você viva um parto respeitoso, com informação,
+						autonomia e confiança — e que se sinta segura pra parir, mesmo em um
+						plantão. A gente te acompanha nessa!
+					</p>
 				</div>
 			</section>
 		</div>

@@ -12,7 +12,9 @@ const Footer: React.FC = () => {
 							<div className="h-8 w-8 bg-blue-600 rounded-full flex items-center justify-center">
 								<span className="text-white font-bold text-sm">LR</span>
 							</div>
-							<span className="ml-2 text-xl font-semibold">Leticia Rezende</span>
+							<span className="ml-2 text-xl font-semibold">
+								Leticia Rezende
+							</span>
 						</div>
 						<p className="text-gray-400 mb-4 max-w-md">
 							Providing compassionate and professional nursing care with a focus
@@ -83,7 +85,8 @@ const Footer: React.FC = () => {
 
 				<div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
 					<p>
-						&copy; {new Date().getFullYear()} Leticia Rezende. All rights reserved.
+						&copy; {new Date().getFullYear()} Leticia Rezende. All rights
+						reserved.
 					</p>
 				</div>
 			</div>

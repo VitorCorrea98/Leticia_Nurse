@@ -15,16 +15,13 @@ const Navbar: React.FC = () => {
 	];
 
 	return (
-		<nav className="bg-white shadow-lg sticky top-0 z-50">
+		<nav className="bg-primary-light shadow-lg sticky top-0 z-50">
 			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 				<div className="flex justify-between h-16">
 					<div className="flex items-center">
 						<Link to="/" className="flex-shrink-0 flex items-center">
-							<div className="h-8 w-8 bg-blue-600 rounded-full flex items-center justify-center">
-								<span className="text-white font-bold text-sm">LR</span>
-							</div>
-							<span className="ml-2 text-xl font-semibold text-gray-800">
-								Leticia Rezende
+							<span className="ml-2 text-xl font-semibold text-primary-dark">
+								elasdoparto
 							</span>
 						</Link>
 					</div>
@@ -37,8 +34,8 @@ const Navbar: React.FC = () => {
 								to={item.href}
 								className={`${
 									location.pathname === item.href
-										? "text-blue-600 border-blue-600"
-										: "text-gray-600 hover:text-blue-600 border-transparent"
+										? "text-white"
+										: "text-white hover:text-white border-transparent"
 								} px-3 py-2 text-sm font-medium border-b-2 transition-colors duration-200`}
 							>
 								{item.name}
