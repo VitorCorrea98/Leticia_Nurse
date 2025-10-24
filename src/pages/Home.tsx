@@ -5,7 +5,6 @@ import Foto_Hero from "../assets/Home/Foto_Hero_Le_Vitoria.jpeg";
 import Foto_Leticia from "../assets/Home/Foto_Home_Le.jpeg";
 import Foto_Vitoria from "../assets/Home/Foto_Home_Vitoria.jpeg";
 import Foto_Doula_Enfermeira from "../assets/Home/Secao_Doula_Enfermeira.png";
-import Foto_Pre_Natal from "../assets/Home/Secao_Pre_Natal.png";
 
 const Home: React.FC = () => {
 	const [isBioVisible, setIsBioVisible] = useState(false);
