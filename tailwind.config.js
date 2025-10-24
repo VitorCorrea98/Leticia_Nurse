@@ -9,18 +9,30 @@ export default {
 					dark: "#9c080c",
 				},
 				secondary: {
-					pink: "#ffb9c2",
-					purple: "#a2498b"
-				}
+					pink: {
+						light: "#ffb9c2", 
+						dark: "#ef63cc"
+					},
+					purple: {
+						light: "#a2498b", 
+						dark: "#80326b"
+					}
+				},
+				red: "#620205"
 			},
 			fontFamily: {
-				// 'nome-da-classe': ['Nome da Fonte no CSS', 'fonte-de-fallback']
 				scandilover: ['"Scandilover Script"', "cursive"],
 				karimun: ['Karimun', 'serif'],
 				open_sans: ['"Open Sans"'],
 				dm_serif: ['"DM Serif Display"'],
-				sans: ["Inter", "system-ui", "sans-serif"], // Exemplo de como definir uma fonte principal
+				sans: ["Inter", "system-ui", "sans-serif"],
 			},
+			screens: {
+			'sm': '640px',
+      'md': '768px',
+      'lg': '1024px',
+      'xl': '1280px',
+			}
 		},
 	},
 	plugins: [],
