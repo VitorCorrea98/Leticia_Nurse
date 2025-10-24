@@ -15,12 +15,12 @@ const Navbar: React.FC = () => {
 	];
 
 	return (
-		<nav className="bg-primary-light shadow-lg sticky top-0 z-50">
+		<nav className="bg-brand-red-500 shadow-lg sticky top-0 z-50">
 			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 				<div className="flex justify-between h-16">
 					<div className="flex items-center">
 						<Link to="/" className="flex-shrink-0 flex items-center">
-							<span className="ml-2 text-xl font-semibold text-primary-dark">
+							<span className="ml-2 text-xl font-semibold text-brand-red-700">
 								elasdoparto
 							</span>
 						</Link>

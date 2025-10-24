@@ -1,12 +1,19 @@
 // src/pages/Home.tsx
 import type React from "react";
-import { useId } from "react";
+import { useId, useState } from "react";
 import Foto_Hero from "../assets/Home/Foto_Hero_Le_Vitoria.jpeg";
 import Foto_Leticia from "../assets/Home/Foto_Home_Le.jpeg";
 import Foto_Vitoria from "../assets/Home/Foto_Home_Vitoria.jpeg";
 import Foto_Doula_Enfermeira from "../assets/Home/Secao_Doula_Enfermeira.png";
+import Foto_Pre_Natal from "../assets/Home/Secao_Pre_Natal.png";
 
 const Home: React.FC = () => {
+	const [isBioVisible, setIsBioVisible] = useState(false);
+
+	const toggleBio = () => {
+		setIsBioVisible((prev) => !prev);
+	};
+
 	return (
 		<div className="min-h-screen">
 			<section id={useId()} className="relative flex justify-center w-full">
@@ -15,54 +22,54 @@ const Home: React.FC = () => {
 					src={Foto_Hero}
 					alt="Foto da Leticia e da Vitoria"
 				/>
-				<span className="absolute bottom-16 left-1/2 lg:text-7xl text-2xl -translate-x-1/2 font-scandilover text-center text-white w-full p-4">
+				<span className="absolute md:bottom-16 bottom-4 left-1/2 lg:text-7xl sm:text-5xl text-2xl -translate-x-1/2 font-scandilover text-center text-white w-full p-4">
 					parto, conexão e ciência
 				</span>
 			</section>
-			<section id={useId()} className="flex flex-col py-12 px-4">
-				<h2 className="text-primary-dark text-center font-dm_serif text-5xl md:text-7xl mb-16 md:mb-28">
+			<section id={useId()} className="flex flex-col py-12 px-4 ">
+				<h2 className="text-brand-red-700 text-center font-dm_serif text-5xl md:text-7xl mb-16 md:mb-20">
 					Cenário obstétrico
 				</h2>
-				<div className="flex flex-col items-center gap-16 md:flex-row md:justify-around md:gap-0">
-					<div className="bg-secondary-pink-light p-8 rounded-full">
+				<div className="flex flex-col items-center md:flex-row md:justify-around gap-6 md:gap-0">
+					<div className="bg-rose-300 p-8 rounded-full">
 						<div className="flex flex-col items-center">
 							<span className="text-5xl md:text-7xl font-extrabold text-white mb-6">
 								67%
 							</span>
-							<p className="max-w-xs text-lg md:text-2xl text-center font-open_sans text-primary-dark font-bold">
+							<p className="max-w-xs text-lg md:text-2xl text-center font-open_sans text-brand-red-700 font-bold">
 								das mulheres sofrem algum tipo de violência no parto
 							</p>
 						</div>
 					</div>
 
-					<div className="bg-secondary-pink-light p-8 rounded-full">
+					<div className="bg-rose-300 p-8 rounded-full">
 						<div className="flex flex-col items-center">
 							<span className="text-5xl md:text-7xl font-extrabold text-white mb-6">
 								84%
 							</span>
-							<p className="max-w-xs text-lg md:text-2xl text-pretty text-center font-open_sans text-primary-dark font-bold">
+							<p className="max-w-xs text-lg md:text-2xl text-pretty text-center font-open_sans text-brand-red-700 font-bold">
 								lugar que o brasil ocupa no ranking mundial de cesarianas
 							</p>
 						</div>
 					</div>
 
-					<div className="bg-secondary-pink-light p-8 rounded-full">
+					<div className="bg-rose-300 p-8 rounded-full">
 						<div className="flex flex-col items-center">
 							<span className="text-5xl md:text-7xl font-extrabold text-white mb-6">
 								84%
 							</span>
-							<p className="max-w-xs text-lg md:text-2xl text-center font-open_sans text-primary-dark font-bold">
+							<p className="max-w-xs text-lg md:text-2xl text-center font-open_sans text-brand-red-700 font-bold">
 								desistem do parto normal
 							</p>
 						</div>
 					</div>
 				</div>
 			</section>
-			<section className="bg-secondary-purple-light py-12">
-				<h2 className="text-7xl text-center text-primary-dark ">
+			<section className="bg-purple-600 py-12">
+				<h2 className="text-5xl md:text-7xl text-center text-brand-red-700 ">
 					Nossa missão
 				</h2>
-				<div className="p-12 text-white text-4xl flex flex-col justify-center w-3/4 mx-auto gap-12 text-pretty">
+				<div className="lg:p-12 sm:p-8 py-4 text-white text-xl md:text-3xl flex flex-col justify-center w-3/4 mx-auto gap-12 text-pretty">
 					<p className="font-open_sans text-pretty">
 						Nos unimos porque, na prática, sabemos o quanto o sistema obstétrico
 						ainda <span className="font-bold">dificulta o parto normal</span>,
@@ -87,10 +94,13 @@ const Home: React.FC = () => {
                md:absolute md:left-1/2 md:top-16 md:-translate-x-1/2 
                md:z-10 md:text-white md:text-6xl md:px-6 md:py-2 md:rounded-lg md:w-auto"
 				>
-					Quem são <span className="text-primary-light">elas</span>
+					Quem são <span className="text-brand-red-500">elas</span>
 				</h2>
 
-				<div className="relative group w-full md:w-1/2 overflow-hidden">
+				<div
+					className="relative group w-full md:w-1/2 overflow-hidden"
+					onClick={toggleBio}
+				>
 					<img
 						src={Foto_Vitoria}
 						alt="Foto Vitoria"
@@ -107,12 +117,13 @@ const Home: React.FC = () => {
 					</p>
 
 					<div
-						className="absolute inset-0 flex items-center justify-center 
-                 p-6 md:p-8 bg-black/70 text-white text-center 
-                 opacity-0 group-hover:opacity-100 
-                 transition-opacity duration-300 z-20"
+						className={`absolute inset-0 flex items-center justify-center 
+                   p-6 md:p-8 bg-black/70 text-white text-center 
+                   transition-opacity duration-300 z-20 
+                   ${isBioVisible ? "opacity-100" : "opacity-0"} 
+                   md:group-hover:opacity-100`}
 					>
-						<p className="text-lg md:text-3xl font-open_sans">
+						<p className="text-base md:text-lg lg:text-3xl">
 							Doula pela Fiocruz e Psicóloga pela Unigranrio. Atualmente,
 							Mestranda (UERJ), pesquisando sobre maternidade e políticas
 							publicas. Carrego pela vida um olhar apaixonado e instigado à
@@ -129,7 +140,10 @@ const Home: React.FC = () => {
 					</div>
 				</div>
 
-				<div className="relative group w-full md:w-1/2 overflow-hidden">
+				<div
+					className="relative group w-full md:w-1/2 overflow-hidden"
+					onClick={toggleBio}
+				>
 					<img
 						src={Foto_Leticia}
 						alt="Foto Leticia"
@@ -146,12 +160,13 @@ const Home: React.FC = () => {
 					</p>
 
 					<div
-						className="absolute inset-0 flex items-center justify-center 
-                 p-6 md:p-8 bg-black/70 text-white text-center 
-                 opacity-0 group-hover:opacity-100 
-                 transition-opacity duration-300 z-20"
+						className={`absolute inset-0 flex items-center justify-center 
+                   p-6 md:p-8 bg-black/70 text-white text-center 
+                   transition-opacity duration-300 z-20 
+                   ${isBioVisible ? "opacity-100" : "opacity-0"} 
+                   md:group-hover:opacity-100`}
 					>
-						<p className="text-lg md:text-3xl font-open_sans">
+						<p className="text-base md:text-lg lg:text-3xl font-open_sans">
 							Enfermeira pela Universidade Federal do Estado do Rio de Janeiro,
 							especialista em obstetrícia pela UERJ, atualmente atua em uma
 							maternidade do SUS, e na equipe de parto domiciliar planejado,
@@ -173,7 +188,7 @@ const Home: React.FC = () => {
 					alt="Foto da Leticia"
 					className="size-max w-full"
 				/>
-				<div className="bg-secondary-pink-dark py-8 px-14 text-secondary-purple-dark font-open_sans text-3xl text-justify [&>p]:indent-8 flex flex-col gap-2">
+				<div className="bg-purple-400 py-8 md:px-16 px-8 text-secondary-purple-dark font-open_sans text-3xl text-justify [&>p]:indent-8 flex flex-col gap-2">
 					<p className="">
 						Quando falamos em parto, é impossível não lembrar que o Brasil ainda
 						enfrenta um grande desafio: as altas taxas de cesariana. Segundo o
@@ -251,55 +266,64 @@ const Home: React.FC = () => {
 					</p>
 				</div>
 			</section>
-			<section className="bg-primary-dark py-24 px-16">
-				<div className="flex flex-col text-6xl text-red font-bold pl-4 font-dm_serif">
+			<section className="bg-brand-red-700 py-24 md:px-16 px-8">
+				<div className="flex flex-col md:text-6xl text-5xl text-brand-red-900 font-bold pl-4 mb-6 font-dm_serif">
 					<span>Educação</span>
 					<span className="-mt-2">perinatal</span>
-					<div>
+					<div className="-mt-3">
 						<span className="text-white">importa</span>
 						<span>?</span>
 					</div>
 				</div>
-				<div className="py-8 text-white font-thin font-open_sans text-3xl text-justify [&>p]:indent-10 flex flex-col gap-2">
+				<div className="py-8 text-white font-extralight font-open_sans text-3xl text-justify [&>p]:indent-10 flex flex-col gap-2">
 					<p>
 						As consultas de educação perinatal são um dos pilares para uma
 						experiência de parto positiva e segura, especialmente quando a
-						mulher vai parir no plantão, ou seja, assistida por uma equipe que
-						ela não conhece previamente. Quando uma mulher chega ao parto sem
-						preparo, ela tende a sentir medo, insegurança e dúvida, sensações
-						que podem gerar tensão corporal e emocional, interferindo
-						diretamente na progressão do trabalho de parto. Isso ocorre porque o
-						medo e a ansiedade aumentam a liberação de adrenalina, um hormônio
-						que inibe a ocitocina, substância essencial para as contrações
-						eficazes. Ou seja, a falta de conhecimento pode literalmente
-						dificultar o parto.
+						mulher vai <span className="font-bold">parir no plantão</span>, ou
+						seja, assistida por uma equipe que ela não conhece previamente.
+						Quando uma mulher chega ao parto sem preparo, ela tende a{" "}
+						<span className="font-bold">sentir medo, insegurança e dúvida</span>
+						, sensações que podem gerar tensão corporal e emocional,
+						interferindo diretamente na progressão do trabalho de parto. Isso
+						ocorre porque o medo e a ansiedade aumentam a liberação de
+						adrenalina, um hormônio que inibe a ocitocina, substância essencial
+						para as contrações eficazes. Ou seja, a falta de conhecimento pode
+						literalmente dificultar o parto.
 					</p>
 					<p>
 						Além de favorecer um parto mais tranquilo e com melhores desfechos,
-						a educação perinatal é uma ferramenta poderosa na prevenção da
-						violência obstétrica. Esse tipo de violência pode ocorrer em
-						diferentes momentos da assistência, inclusive no pré-natal, e se
-						manifesta em atitudes desrespeitosas, intervenções sem necessidade,
-						negligência, falta de informação ou comunicação inadequada.
+						a educação perinatal é uma ferramenta poderosa na{" "}
+						<span className="font-bold">prevenção da violência obstétrica</span>
+						. Esse tipo de violência pode ocorrer em diferentes momentos da
+						assistência, inclusive no pré-natal, e se manifesta em atitudes
+						desrespeitosas, intervenções sem necessidade, negligência, falta de
+						informação ou comunicação inadequada.
 					</p>
 					<p>
 						Diversos estudos brasileiros mostram que a maioria das mulheres
 						inicia o pré-natal desejando o parto normal, mas muitas acabam
 						mudando de opinião ou não conseguem realizá-lo. Essa mudança de
 						trajetória está frequentemente associada à falta de informação
-						adequada, à influência de profissionais de saúde, ao medo da dor e à
-						cultura hospitalar intervencionista. Esses achados reforçam a
-						importância da educação perinatal como estratégia essencial para
-						fortalecer a autonomia da mulher, garantir decisões informadas e
-						reduzir a distância entre o desejo e a realidade do parto no Brasil.
+						adequada,{" "}
+						<span className="font-bold">
+							à influência de profissionais de saúde, ao medo da dor e à cultura
+							hospitalar intervencionista
+						</span>
+						. Esses achados reforçam a importância da educação perinatal como
+						estratégia essencial para fortalecer a autonomia da mulher, garantir
+						decisões informadas e reduzir a distância entre o desejo e a
+						realidade do parto no Brasil.
 					</p>
 					<p>
 						Nessa situação, o conhecimento adquirido nas consultas se transforma
 						em ferramenta de autonomia e proteção, permitindo que a mulher saiba
 						o que pode solicitar, o que pode recusar e como expressar suas
-						vontades com clareza e segurança. Nós auxiliamos e apoiamos a
-						construção do Plano de Parto, que será construído a cada consulta,
-						de acordo com os temas que abordaremos.
+						vontades com clareza e segurança. Nós{" "}
+						<span className="font-bold">
+							auxiliamos e apoiamos a construção do Plano de Parto
+						</span>
+						, que será construído a cada consulta, de acordo com os temas que
+						abordaremos.
 					</p>
 					<p>
 						As consultas de educação perinatal também envolvem o acompanhante,
@@ -308,6 +332,64 @@ const Home: React.FC = () => {
 						emocional de maneira efetiva. Assim, mesmo diante de uma equipe
 						nova, a mulher e seu acompanhante conseguem manter o foco, a
 						tranquilidade e o protagonismo.
+					</p>
+				</div>
+			</section>
+			<section className="bg-rose-300 py-24 md:px-16 px-8">
+				<div className="flex flex-col md:text-6xl text-4xl w-fit font-bold md:pl-4 mb-6 font-dm_serif">
+					<span className="text-rose-500">Acompanhamento dos</span>
+					<span className="-mt-2 text-white">exames pré natais</span>
+				</div>
+				<div className="py-8 text-rose-500 font-extralight font-open_sans text-3xl text-justify [&>p]:indent-10 flex flex-col gap-2">
+					<p>
+						O pré-natal não é apenas uma sequência de consultas, é um
+						<span className="font-bold">
+							acompanhamento contínuo da saúde da gestante e do bebê
+						</span>
+						. Cada consulta serve para atualizar o risco obstétrico, prevenir
+						complicações e assegurar que a gestação evolua de forma saudável,
+						dentro do possível. Uma gestante considerada de risco habitual pode
+						deixar de sê-lo se algum exame apresentar alterações, por isso,
+						todos os exames são fundamentais para atualização do risco e das
+						condutas obstétricas.
+					</p>
+					<p>
+						Como enfermeira obstétrica, acompanho de forma próxima os resultados
+						dos exames pré-natais de todas as minhas gestantes. Meu papel não é
+						realizar o pré-natal, mas sim atuar paralelamente,{" "}
+						<span className="font-bold">
+							garantindo que cada resultado seja avaliado
+						</span>{" "}
+						de acordo com os protocolos do Ministério da Saúde e com o quadro
+						clínico de cada mulher. Meu papel é acompanhar de perto a evolução
+						da gestação, trazendo debates críticos, análises, solicitação de
+						novos exames, se necessário for.
+					</p>
+					<p>
+						Observar os exames permite identificar precocemente qualquer
+						alteração, orientar sobre a necessidade de repetir exames ou
+						solicitar outros, e apoiar a gestante no diálogo com o profissional
+						que realiza o pré-natal.{" "}
+						<span className="font-bold">
+							Esse acompanhamento contínuo ajuda a reduzir riscos, aumentar a
+							segurança e promover um cuidado mais personalizado, baseado em
+							evidências e no respeito à saúde da mulher
+						</span>
+						.
+					</p>
+					<p>
+						Um pré-natal bem conduzido, aliado a um acompanhamento atento dos
+						exames, é essencial para o trabalho de parto. A assistência
+						pré-hospitalar é técnica, profissional e especializada, por isso o
+						acompanhamento do histórico gestacional é extremamente importante na
+						tomada de decisão. Além disso,{" "}
+						<span className="font-bold">
+							permite que a equipe esteja preparada para eventuais
+							intercorrências e reduzindo complicações relacionadas a
+							comorbidades
+						</span>
+						. Isso significa mais segurança e tranquilidade para a gestante e
+						sua família, do início da gestação até o nascimento do bebê.
 					</p>
 				</div>
 			</section>

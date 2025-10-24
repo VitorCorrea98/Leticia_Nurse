@@ -4,22 +4,23 @@ export default {
 	theme: {
 		extend: {
 			colors: {
-				primary: {
-					light: "#eb061d",
-					dark: "#9c080c",
-				},
-				secondary: {
-					pink: {
-						light: "#ffb9c2", 
-						dark: "#ef63cc"
-					},
-					purple: {
-						light: "#a2498b", 
-						dark: "#80326b"
-					}
-				},
-				red: "#620205"
-			},
+        'brand-red': {
+          500: "#eb061d",
+          700: "#9c080c",
+          900: "#620205",
+        },
+        'rose': {
+          300: "#ffb9c2",
+          500: "#c87d87",
+        },
+        'purple': {
+          400: "#ef63cc",
+          600: "#a2498b",
+          800: "#80326b",
+        },
+        'text-dark': '#222222',
+        'background-light': '#FFFFFF',
+      },
 			fontFamily: {
 				scandilover: ['"Scandilover Script"', "cursive"],
 				karimun: ['Karimun', 'serif'],
