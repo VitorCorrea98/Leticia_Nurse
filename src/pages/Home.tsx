@@ -96,10 +96,7 @@ const Home: React.FC = () => {
 					Quem são <span className="text-brand-red-500">elas</span>
 				</h2>
 
-				<div
-					className="relative group w-full md:w-1/2 overflow-hidden"
-					onClick={toggleBio}
-				>
+				<div className="relative group w-full md:w-1/2 overflow-hidden">
 					<img
 						src={Foto_Vitoria}
 						alt="Foto Vitoria"
@@ -137,12 +134,13 @@ const Home: React.FC = () => {
 							escrevendo e pintando sentimentos.
 						</p>
 					</div>
+					<div
+						className="absolute inset-0 z-30 cursor-pointer md:hidden"
+						onClick={toggleBio}
+					/>
 				</div>
 
-				<div
-					className="relative group w-full md:w-1/2 overflow-hidden"
-					onClick={toggleBio}
-				>
+				<div className="relative group w-full md:w-1/2 overflow-hidden">
 					<img
 						src={Foto_Leticia}
 						alt="Foto Leticia"
@@ -179,6 +177,10 @@ const Home: React.FC = () => {
 							você já tem um pouquinho de mim
 						</p>
 					</div>
+					<div
+						className="absolute inset-0 z-30 cursor-pointer md:hidden"
+						onClick={toggleBio}
+					/>
 				</div>
 			</section>
 			<section>
