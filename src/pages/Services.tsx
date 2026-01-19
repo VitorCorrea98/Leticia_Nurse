@@ -1,102 +1,145 @@
 // src/pages/Services.tsx
 import type React from "react";
-import type { Service } from "../types";
+
+// import Img_Lirio from "../assets/Services/lirio.png";
+// import Img_Margarida from "../assets/Services/margarida.png";
+// Importe suas imagens de flores aqui
+// Se não tiver ainda, o código vai mostrar um quadrado colorido no lugar
+// import Img_Orquidea from "../assets/Services/orquidea.png";
+// import Img_Tulipa from "../assets/Services/tulipa.png";
 
 const Services: React.FC = () => {
-	const services: Service[] = [
+	const pacotes = [
 		{
-			id: 1,
-			title: "Home Health Care",
-			description:
-				"Comprehensive nursing care in the comfort of your home, including wound care, medication management, and health monitoring.",
-			icon: "🏠",
+			id: "orquidea",
+			name: "Orquídea",
+			// Cor aproximada do roxo da imagem
+			bgColor: "bg-[#9d4e8b]",
+			// Cor da faixinha do nome
+			labelColor: "bg-[#782f66]",
+			items: [
+				"Assistência Pré Hospitalar & Hospitalar",
+				"+ 6 consultas temáticas",
+				"+ Presencial: cuidados com o recém nascido",
+				"+ Pintura na Barriga",
+			],
+			image: "Img_Orquidea",
+			flowerPosition: "left", // Flor na esquerda
+			zIndex: "z-[4]"
 		},
 		{
-			id: 2,
-			title: "Chronic Disease Management",
-			description:
-				"Specialized care for patients with chronic conditions like diabetes, hypertension, and heart disease.",
-			icon: "🫀",
+			id: "lirio",
+			name: "Lírio",
+			// Cor aproximada do rosa chiclete
+			bgColor: "bg-[#f472b6]",
+			labelColor: "bg-[#db5da0]",
+			items: [
+				"Assistência Pré Hospitalar & Hospitalar",
+				"+ 5 consultas temáticas",
+			],
+			image: "Img_Lirio",
+			flowerPosition: "right", // Flor na direita
+			zIndex: "z-[3]"
 		},
 		{
-			id: 3,
-			title: "Post-Hospitalization Care",
-			description:
-				"Support and monitoring during recovery after hospital discharge to prevent readmission.",
-			icon: "🏥",
+			id: "margarida",
+			name: "Margarida",
+			// Cor aproximada do vermelho escuro/vinho
+			bgColor: "bg-[#8b0000]",
+			labelColor: "bg-[#660000]",
+			items: [
+				"Assistência Pré Hospitalar & Hospitalar",
+				"+ 4 consultas temáticas",
+			],
+			image: "Img_Margarida",
+			flowerPosition: "left",
+			zIndex: "z-[2]"
 		},
 		{
-			id: 4,
-			title: "Health Assessments",
-			description:
-				"Comprehensive health evaluations, vital signs monitoring, and health risk assessments.",
-			icon: "📊",
-		},
-		{
-			id: 5,
-			title: "Medication Management",
-			description:
-				"Assistance with medication organization, administration, and education about proper usage.",
-			icon: "💊",
-		},
-		{
-			id: 6,
-			title: "Health Education",
-			description:
-				"Patient and family education about disease prevention, healthy lifestyle, and self-care techniques.",
-			icon: "👨‍👩‍👧‍👦",
+			id: "tulipa",
+			name: "Tulipa",
+			// Cor aproximada do vermelho vivo
+			bgColor: "bg-[#ff1f1f]",
+			labelColor: "bg-[#d61313]",
+			items: [
+				"Assistência Pré Hospitalar & Hospitalar",
+				"+ 2 consultas temáticas",
+			],
+			image: "Img_Tulipa",
+			flowerPosition: "left", // Na imagem parece esquerda/baixo
+			zIndex: "z-[1]"
 		},
 	];
 
 	return (
-		<div className="min-h-screen py-12">
-			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-				{/* Header */}
+		<div className="min-h-screen bg-slate-50 pt-24 pb-20 px-4">
+			<div className="max-w-4xl mx-auto">
+				{/* Cabeçalho "Pacotes Assistenciais" com fonte script */}
 				<div className="text-center mb-16">
-					<h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-						My Services
+					<h1 className="font-scandilover text-6xl md:text-8xl text-brand-red-700 drop-shadow-sm">
+						Pacotes
 					</h1>
-					<p className="text-xl text-gray-600 max-w-2xl mx-auto">
-						Comprehensive nursing services tailored to meet your healthcare
-						needs with professionalism and compassion.
-					</p>
+					<h2 className="font-scandilover text-5xl md:text-7xl text-brand-red-500 -mt-4 md:-mt-8">
+						assistenciais
+					</h2>
 				</div>
 
-				{/* Services Grid */}
-				<div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-					{services.map((service) => (
+				{/* Lista de Cards */}
+				<div className="flex flex-col gap-8 md:gap-12">
+					{pacotes.map((pkg) => (
 						<div
-							key={service.id}
-							className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 p-6 border border-gray-100"
+							key={pkg.id}
+							className={`relative w-full rounded-[2.5rem] overflow-hidden shadow-xl transition-transform duration-300 hover:scale-[1.02] ${pkg.bgColor} min-h-[280px] flex flex-col md:flex-row items-center not-first:-mt-28 not-first:pt-32 ${pkg.zIndex}`}
 						>
-							<div className="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
-								<span className="text-2xl">{service.icon}</span>
+							{/* Lógica de Renderização: Inverter ordem se a flor for na direita */}
+							<div
+								className={`w-full h-full flex flex-col md:flex-row ${pkg.flowerPosition === "right" ? "md:flex-row-reverse" : ""}`}
+							>
+								{/* --- ÁREA DA FLOR --- */}
+								<div className="relative w-full md:w-2/5 h-64 md:h-auto flex items-center justify-center p-4">
+									{/* Imagem da Flor */}
+									<img
+										src={pkg.image}
+										alt={`Pacote ${pkg.name}`}
+										className="w-full h-full object-contain drop-shadow-2xl z-10 max-h-[250px]"
+									/>
+
+									{/* Nome da Flor (Label estilizada sobre a imagem/faixa) */}
+									<div
+										className={`absolute bottom-6 md:bottom-10 w-full text-center z-20`}
+									>
+										<span
+											className={`font-scandilover text-white text-5xl md:text-6xl px-4 py-1 rotate-[-4deg] inline-block shadow-sm ${pkg.labelColor}`}
+										>
+											{pkg.name}
+										</span>
+									</div>
+								</div>
+
+								{/* --- ÁREA DO TEXTO --- */}
+								<div
+									className={`w-full md:w-3/5 p-8 md:p-12 flex flex-col justify-center text-white ${pkg.flowerPosition === "right" ? "md:text-left" : "md:text-left text-center"}`}
+								>
+									{/* Título Principal do Card */}
+									<h3 className="font- text-2xl md:text-3xl mb-4 leading-tight">
+										{pkg.items[0]}
+									</h3>
+
+									{/* Lista de itens restantes */}
+									<ul className="space-y-2">
+										{pkg.items.slice(1).map((item) => (
+											<li
+												key={item}
+												className="font-open_sans text-lg md:text-xl font-medium opacity-90"
+											>
+												{item}
+											</li>
+										))}
+									</ul>
+								</div>
 							</div>
-							<h3 className="text-xl font-semibold text-gray-900 mb-3">
-								{service.title}
-							</h3>
-							<p className="text-gray-600 leading-relaxed">
-								{service.description}
-							</p>
 						</div>
 					))}
-				</div>
-
-				{/* Call to Action */}
-				<div className="mt-16 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl p-8 text-center text-white">
-					<h2 className="text-2xl md:text-3xl font-bold mb-4">
-						Ready to Discuss Your Healthcare Needs?
-					</h2>
-					<p className="text-blue-100 mb-6 max-w-2xl mx-auto">
-						Contact me today to schedule a consultation and learn how I can help
-						you achieve better health outcomes.
-					</p>
-					<button
-						type="button"
-						className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors duration-200"
-					>
-						Schedule Consultation
-					</button>
 				</div>
 			</div>
 		</div>

@@ -1,77 +1,74 @@
 // src/pages/About.tsx
 import type React from "react";
+import Foto_Leticia from "../assets/Home/Foto_Home_Le.jpeg";
+import Foto_Vitoria from "../assets/Home/Foto_Home_Vitoria.jpeg";
 
 const About: React.FC = () => {
 	return (
-		<div className="min-h-screen py-12">
-			<div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-				{/* Header */}
-				<div className="text-center mb-16">
-					<h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-						About Me
-					</h1>
-					<p className="text-xl text-gray-600 max-w-2xl mx-auto">
-						Dedicated healthcare professional committed to making a difference
-						in patients' lives
-					</p>
-				</div>
+		<div className="pt-16 bg-slate-50 min-h-screen">
 
-				<div className="grid md:grid-cols-2 gap-12 items-center">
-					{/* Profile Image Placeholder */}
-					<div className="bg-gray-200 rounded-2xl h-96 flex items-center justify-center">
-						<span className="text-gray-500 text-lg">Nurse Photo</span>
+			{/* Header da Página */}
+			<div className="bg-rose-100 py-16 text-center px-4">
+				<h1 className="text-brand-red-700 font-dm_serif text-5xl md:text-7xl mb-4">
+					Quem são elas?
+				</h1>
+				<p className="text-rose-800 font-open_sans text-lg max-w-2xl mx-auto">
+					Conheça as profissionais que estarão ao seu lado nessa jornada transformadora.
+				</p>
+			</div>
+
+			<div className="max-w-6xl mx-auto px-4 py-16 space-y-24">
+
+				{/* BLOCO VICTORIA */}
+				<div className="flex flex-col md:flex-row gap-12 items-center">
+					<div className="w-full md:w-1/2 h-[500px] rounded-2xl overflow-hidden shadow-xl rotate-1 hover:rotate-0 transition-transform duration-500">
+						<img src={Foto_Vitoria} alt="Victória" className="w-full h-full object-cover" />
 					</div>
-
-					{/* Content */}
-					<div className="space-y-6">
-						<div>
-							<h2 className="text-2xl font-bold text-gray-900 mb-4">
-								My Journey in Nursing
-							</h2>
-							<p className="text-gray-600 leading-relaxed">
-								With over 5 years of experience in the healthcare field, I've
-								dedicated my career to providing compassionate and professional
-								nursing care. My journey began at [Hospital/University Name],
-								where I developed a passion for patient-centered care.
+					<div className="w-full md:w-1/2 space-y-6">
+						<h2 className="text-6xl font-scandilover text-brand-red-500">Victória</h2>
+						<div className="space-y-4 text-gray-700 font-open_sans text-lg leading-relaxed text-justify">
+							<p>
+								<span className="font-bold text-brand-red-700">Doula pela Fiocruz e Psicóloga pela Unigranrio.</span> Atualmente,
+								Mestranda (UERJ), pesquisando sobre maternidade e políticas publicas.
 							</p>
-						</div>
-
-						<div>
-							<h3 className="text-xl font-semibold text-gray-900 mb-3">
-								My Philosophy
-							</h3>
-							<p className="text-gray-600 leading-relaxed">
-								I believe that every patient deserves individualized attention
-								and care that addresses not just their physical needs, but their
-								emotional and psychological well-being too. Healthcare is a
-								partnership between provider and patient.
+							<p>
+								Carrego pela vida um olhar apaixonado e instigado à transformação, não atoa cheguei à doulagem,
+								cheia de gás para mudar a realidade obstétrica. Já contribui para mais de 100 experiências positivas de parto.
 							</p>
-						</div>
-
-						<div>
-							<h3 className="text-xl font-semibold text-gray-900 mb-3">
-								Education & Certifications
-							</h3>
-							<ul className="text-gray-600 space-y-2">
-								<li>• Bachelor of Science in Nursing (BSN)</li>
-								<li>• Registered Nurse (RN) License</li>
-								<li>• CPR and BLS Certified</li>
-								<li>• [Other relevant certifications]</li>
-							</ul>
-						</div>
-
-						<div className="bg-blue-50 p-6 rounded-lg">
-							<h3 className="text-lg font-semibold text-blue-900 mb-2">
-								Why I Love What I Do
-							</h3>
-							<p className="text-blue-800">
-								"There's no greater reward than seeing a patient recover and
-								knowing I played a part in their healing journey. Every day
-								brings new opportunities to make a positive impact."
+							<p>
+								Meu olhar diferencial mora na consciência de parto como um evento biopsicossocial.
+								Sou canceriana, apaixonada pela vida, amante do mar, de poesia e de música.
 							</p>
 						</div>
 					</div>
 				</div>
+
+				{/* Divider Decorativo */}
+				<div className="w-full h-px bg-rose-200" />
+
+				{/* BLOCO LETICIA (Invertido no Desktop) */}
+				<div className="flex flex-col md:flex-row-reverse gap-12 items-center">
+					<div className="w-full md:w-1/2 h-[500px] rounded-2xl overflow-hidden shadow-xl -rotate-1 hover:rotate-0 transition-transform duration-500">
+						<img src={Foto_Leticia} alt="Letícia" className="w-full h-full object-cover" />
+					</div>
+					<div className="w-full md:w-1/2 space-y-6">
+						<h2 className="text-6xl font-scandilover text-brand-red-500 md:text-right">Letícia</h2>
+						<div className="space-y-4 text-gray-700 font-open_sans text-lg leading-relaxed text-justify">
+							<p>
+								<span className="font-bold text-brand-red-700">Enfermeira pela UNIRIO, especialista em obstetrícia pela UERJ. </span>
+								Atualmente atua em uma maternidade do SUS e na equipe de parto domiciliar planejado.
+							</p>
+							<p>
+								Sou sanguínea e libriana: adoro falar e tudo pra mim vira arte, sempre.
+								Trabalho baseada em evidências científicas, na fisiologia do parto, no respeito e autonomia.
+							</p>
+							<p>
+								Acredito que nascer vai além da ciência, é portal, é conexão, é reconhecimento e intimidade.
+							</p>
+						</div>
+					</div>
+				</div>
+
 			</div>
 		</div>
 	);
