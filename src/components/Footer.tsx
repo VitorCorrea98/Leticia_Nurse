@@ -34,7 +34,7 @@ const Footer: React.FC = () => {
 	];
 
 	return (
-		<footer className="bg-brand-red-900 text-rose-100 font-open_sans border-t-4 border-rose-800">
+		<footer className="bg-brand-red-900 text-rose-100 font-open_sans">
 			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
 
 				{/* Layout alterado para 4 colunas em telas grandes para caber os Pilares */}
