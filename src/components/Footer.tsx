@@ -28,7 +28,7 @@ const Footer: React.FC = () => {
 	// Novos Links dos Pilares (Para facilitar acesso direto)
 	const pilaresLinks = [
 		{ name: "Educação Perinatal", to: "/pilares/educacao-perinatal" },
-		{ name: "Plano de Parto", to: "/pilares/plano-de-parto" },
+		{ name: "Exames Pré Natais", to: "/pilares/exames-pre-natais" },
 		{ name: "Assistência Hospitalar", to: "/pilares/assistencia-hospitalar" },
 		{ name: "Pós Parto", to: "/pilares/pos-parto" },
 	];
