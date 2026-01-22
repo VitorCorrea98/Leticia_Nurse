@@ -37,7 +37,7 @@ const Home: React.FC = () => {
 		},
 		{
 			title: "Acompanhamento de Exames",
-			link: "/pilares/educacao-perinatal",
+			link: "/pilares/exames-pre-natais",
 			image: Foto_AcompanhamentoExames,
 			alt: "Papéis rosa",
 		},
