@@ -23,12 +23,12 @@ const Home: React.FC = () => {
 			image: Foto_EduPerinatal,
 			alt: "Leticia e Victoria",
 		},
-		{
-			title: "Parto Hospitalar",
-			link: "/pilares/parto-hospitalar",
-			image: Foto_PlanoParto,
-			alt: "Mulher parindo",
-		},
+		// {
+		// 	title: "Parto Hospitalar",
+		// 	link: "/pilares/parto-hospitalar",
+		// 	image: Foto_PlanoParto,
+		// 	alt: "Mulher parindo",
+		// },
 		{
 			title: "Assistência Pré Hospitalar",
 			link: "/pilares/assistencia-hospitalar",
@@ -48,7 +48,7 @@ const Home: React.FC = () => {
 			{/* --- HERO SECTION --- */}
 			<section className="relative w-full h-[85vh] md:h-screen min-h-[600px] flex justify-center overflow-hidden bg-gray-900">
 				<img
-					className="w-full h-full object-cover md:object-fill object-[65%] opacity-90"
+					className="w-full h-full object-contain md:object-fill opacity-90"
 					src={Foto_Hero}
 					alt="Foto da Leticia e da Vitoria"
 				/>
@@ -143,7 +143,6 @@ const Home: React.FC = () => {
 				</div>
 				{/* --- FIM DO SVG DAS ONDAS --- */}
 
-
 				{/* Adicionamos 'relative z-10' para garantir que o texto fique SOBRE as ondas */}
 				<div className="max-w-5xl mx-auto px-6 text-center relative z-10">
 					<h2 className="text-5xl md:text-6xl text-brand-red-700 font-dm_serif mb-12">
@@ -174,7 +173,6 @@ const Home: React.FC = () => {
 
 			{/* --- POR QUE NÃO SÓ DOULA... (ID ADICIONADO PARA O LINK DO NAVBAR) --- */}
 			<section id={"doula-enfermeira"} className="flex flex-col w-full">
-
 				{/* 1. Área da Imagem com Título Sobreposto */}
 				<div className="relative w-full h-[60vh] md:h-[90vh]">
 					<img
@@ -190,43 +188,58 @@ const Home: React.FC = () => {
 				{/* Usei a cor bg-[#ea6eb8] para aproximar do rosa da imagem de referência */}
 				<div className="bg-[#ea6eb8] px-6 py-16 md:px-16 md:py-20 text-white">
 					<div className="max-w-6xl mx-auto">
-
 						{/* Layout em Colunas (Estilo Revista para Desktop) */}
 						<div className="font-open_sans text-lg md:text-xl leading-relaxed text-justify md:columns-2 gap-12 space-y-6 [&>p]:mb-6">
-
 							<p>
-								<span className="font-bold text-2xl float-left mr-2 mt-[-6px] font-dm_serif">Q</span>
-								uando falamos em parto, é impossível ignorar o cenário brasileiro:
-								<span className="font-bold bg-white/20 px-1 rounded">mais de 56% dos nascimentos são cesáreas</span>,
-								muito acima dos 15% recomendados pela OMS. Esse número revela um sistema marcado por medos
-								e interferências. É aqui que nossa união se torna um divisor de águas.
+								<span className="font-bold text-2xl float-left mr-2 mt-[-6px] font-dm_serif">
+									Q
+								</span>
+								uando falamos em parto, é impossível ignorar o cenário
+								brasileiro:
+								<span className="font-bold bg-white/20 px-1 rounded">
+									mais de 56% dos nascimentos são cesáreas
+								</span>
+								, muito acima dos 15% recomendados pela OMS. Esse número revela
+								um sistema marcado por medos e interferências. É aqui que nossa
+								união se torna um divisor de águas.
 							</p>
 
 							<p>
-								A <span className="font-bold text-black/40">doula</span> é o pilar emocional e físico. Ela traduz o "mediquês",
-								oferece conforto e transforma a experiência em algo consciente. Já a
-								<span className="font-bold text-black/40"> enfermeira obstétrica</span> é a guardiã técnica.
-								Com formação científica, ela monitora a segurança clínica, avalia a evolução do parto e garante
-								que tudo ocorra dentro das evidências.
+								A <span className="font-bold text-black/40">doula</span> é o
+								pilar emocional e físico. Ela traduz o "mediquês", oferece
+								conforto e transforma a experiência em algo consciente. Já a
+								<span className="font-bold text-black/40">
+									{" "}
+									enfermeira obstétrica
+								</span>{" "}
+								é a guardiã técnica. Com formação científica, ela monitora a
+								segurança clínica, avalia a evolução do parto e garante que tudo
+								ocorra dentro das evidências.
 							</p>
 
 							<p className="font-bold text-xl md:text-2xl font-dm_serif bg-white/10 p-6 rounded-xl border-l-4 border-white my-8 break-inside-avoid">
-								"Uma potencializa o trabalho da outra: unimos o acolhimento contínuo à segurança clínica."
+								"Uma potencializa o trabalho da outra: unimos o acolhimento
+								contínuo à segurança clínica."
 							</p>
 
 							<p>
-								Estudos comprovam: o apoio contínuo <span className="font-bold">reduz em até 25% as chances de cesariana</span>.
-								Mas a doula não realiza procedimentos clínicos, e a enfermeira, sozinha no plantão, muitas vezes não consegue
+								Estudos comprovam: o apoio contínuo{" "}
+								<span className="font-bold">
+									reduz em até 25% as chances de cesariana
+								</span>
+								. Mas a doula não realiza procedimentos clínicos, e a
+								enfermeira, sozinha no plantão, muitas vezes não consegue
 								oferecer o suporte emocional integral.
 							</p>
 
 							<p>
-								Juntas, preenchemos essa lacuna. Permitimos que você fique mais tempo em casa com segurança antes de ir
-								para a maternidade. Ter essas duas profissionais ao seu lado é um ato de resistência e cuidado,
-								garantindo um parto mais respeitoso, fisiológico e seguro, principalmente no contexto de plantão.
+								Juntas, preenchemos essa lacuna. Permitimos que você fique mais
+								tempo em casa com segurança antes de ir para a maternidade. Ter
+								essas duas profissionais ao seu lado é um ato de resistência e
+								cuidado, garantindo um parto mais respeitoso, fisiológico e
+								seguro, principalmente no contexto de plantão.
 							</p>
 						</div>
-
 					</div>
 				</div>
 			</section>
@@ -242,7 +255,7 @@ const Home: React.FC = () => {
             - Mobile: overflow-x-auto (scroll horizontal)
             - Desktop: grid-cols-4 (todos visíveis lado a lado) ou flex se preferir manter carrossel
           */}
-					<div className="flex md:grid md:grid-cols-4 gap-4 overflow-x-auto pb-6 md:pb-0 snap-x snap-mandatory scroll-smooth">
+					<div className="flex md:grid md:grid-cols-3 gap-4 overflow-x-auto pb-6 md:pb-0 snap-x snap-mandatory scroll-smooth">
 						{pilares.map((pilar) => (
 							<Link
 								key={pilar.title}

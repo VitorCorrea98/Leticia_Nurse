@@ -18,7 +18,7 @@ const Navbar: React.FC = () => {
 		{ name: "Educação Perinatal", href: "/pilares/educacao-perinatal" },
 		{ name: "Exames Pré Natais", href: "/pilares/exames-pre-natais" },
 		{ name: "Assistência Hospitalar", href: "/pilares/assistencia-hospitalar" },
-		{ name: "Pós Parto", href: "/pilares/pos-parto" },
+		// { name: "Pós Parto", href: "/pilares/pos-parto" },
 	];
 
 	useEffect(() => {
