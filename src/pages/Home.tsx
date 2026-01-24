@@ -5,7 +5,7 @@ import Foto_AcompanhamentoExames from "../assets/Home/Acompanhamento_de_Exames.j
 import Foto_Assistencia from "../assets/Home/Assistencia_Pre_Hospitalar.jpeg";
 import Foto_EduPerinatal from "../assets/Home/Educacao_Perinatal_Le_Victoria.jpeg";
 import Foto_Hero from "../assets/Home/Foto_Hero_Le_Vitoria.jpeg";
-import Foto_PlanoParto from "../assets/Home/Parto_Hospitalar.jpeg";
+// import Foto_PlanoParto from "../assets/Home/Parto_Hospitalar.jpeg";
 import Foto_Doula_Enfermeira from "../assets/Home/Secao_Doula_Enfermeira.png";
 
 const StarIcon: React.FC<{ className?: string }> = ({ className }) => (
