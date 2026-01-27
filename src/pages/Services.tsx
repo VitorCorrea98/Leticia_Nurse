@@ -1,5 +1,9 @@
 // src/pages/Services.tsx
 import type React from "react";
+import Lirio from "../assets/Pacotes/Lirio-removebg-preview.png";
+import Margarida from "../assets/Pacotes/Margarida-removebg-preview.png";
+import Orquidea from "../assets/Pacotes/Orquidea-removebg-preview.png";
+import Tulipa from "../assets/Pacotes/Tulipa-removebg-preview.png";
 
 // import Img_Lirio from "../assets/Services/lirio.png";
 // import Img_Margarida from "../assets/Services/margarida.png";
@@ -23,9 +27,9 @@ const Services: React.FC = () => {
 				"+ Presencial: cuidados com o recém nascido",
 				"+ Pintura na Barriga",
 			],
-			image: "Img_Orquidea",
+			image: Orquidea,
 			flowerPosition: "left", // Flor na esquerda
-			zIndex: "z-[4]"
+			zIndex: "z-[4]",
 		},
 		{
 			id: "lirio",
@@ -37,9 +41,9 @@ const Services: React.FC = () => {
 				"Assistência Pré Hospitalar & Hospitalar",
 				"+ 5 consultas temáticas",
 			],
-			image: "Img_Lirio",
+			image: Lirio,
 			flowerPosition: "right", // Flor na direita
-			zIndex: "z-[3]"
+			zIndex: "z-[3]",
 		},
 		{
 			id: "margarida",
@@ -51,9 +55,9 @@ const Services: React.FC = () => {
 				"Assistência Pré Hospitalar & Hospitalar",
 				"+ 4 consultas temáticas",
 			],
-			image: "Img_Margarida",
+			image: Margarida,
 			flowerPosition: "left",
-			zIndex: "z-[2]"
+			zIndex: "z-[2]",
 		},
 		{
 			id: "tulipa",
@@ -65,9 +69,9 @@ const Services: React.FC = () => {
 				"Assistência Pré Hospitalar & Hospitalar",
 				"+ 2 consultas temáticas",
 			],
-			image: "Img_Tulipa",
+			image: Tulipa,
 			flowerPosition: "left", // Na imagem parece esquerda/baixo
-			zIndex: "z-[1]"
+			zIndex: "z-[1]",
 		},
 	];
 
@@ -101,7 +105,7 @@ const Services: React.FC = () => {
 									<img
 										src={pkg.image}
 										alt={`Pacote ${pkg.name}`}
-										className="w-full h-full object-contain drop-shadow-2xl z-10 max-h-[250px]"
+										className="w-full h-full object-contain  object-top drop-shadow-2xl z-10 -mr-48 -mt-6"
 									/>
 
 									{/* Nome da Flor (Label estilizada sobre a imagem/faixa) */}

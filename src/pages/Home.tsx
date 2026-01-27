@@ -5,6 +5,7 @@ import Foto_AcompanhamentoExames from "../assets/Home/Acompanhamento_de_Exames.j
 import Foto_Assistencia from "../assets/Home/Assistencia_Pre_Hospitalar.jpeg";
 import Foto_EduPerinatal from "../assets/Home/Educacao_Perinatal_Le_Victoria.jpeg";
 import Foto_Hero from "../assets/Home/Foto_Hero_Le_Vitoria.jpeg";
+import Foto_Hero_Mobile from "../assets/Home/Leticia_Victoria_Mobile.jpeg";
 // import Foto_PlanoParto from "../assets/Home/Parto_Hospitalar.jpeg";
 import Foto_Doula_Enfermeira from "../assets/Home/Secao_Doula_Enfermeira.png";
 
@@ -47,11 +48,26 @@ const Home: React.FC = () => {
 		<div className="w-full bg-slate-50">
 			{/* --- HERO SECTION --- */}
 			<section className="relative w-full h-[85vh] md:h-screen min-h-[600px] flex justify-center overflow-hidden bg-gray-900">
+				{/* === IMAGEM DESKTOP === */}
+				{/* Lógica: Começa invisível (opacity-0). Em telas grandes (lg:), fica visível com 90% (lg:opacity-90). */}
 				<img
-					className="w-full h-full object-contain md:object-fill opacity-90"
+					className="absolute inset-0 w-full h-full object-cover object-center 
+               transition-opacity duration-700 ease-in-out
+               opacity-0 lg:opacity-90"
 					src={Foto_Hero}
-					alt="Foto da Leticia e da Vitoria"
+					alt="Foto da Leticia e da Vitoria (Desktop)"
 				/>
+
+				{/* === IMAGEM MOBILE === */}
+				{/* Lógica: Começa visível com 90% (opacity-90). Em telas grandes (lg:), fica invisível (lg:opacity-0). */}
+				<img
+					className="absolute inset-0 w-full h-full object-cover object-[65%] 
+               transition-opacity duration-700 ease-in-out
+               opacity-90 lg:opacity-0"
+					src={Foto_Hero_Mobile}
+					alt="Foto da Leticia e da Vitoria (Mobile)"
+				/>
+
 				<div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
 
 				<span className="absolute bottom-20 md:bottom-24 left-1/2 -translate-x-1/2 w-full px-4 text-center z-10">
